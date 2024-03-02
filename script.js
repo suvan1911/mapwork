@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     place = getRandomPlace(mapItems);
                     markHeading.textContent = "Mark " + place;
                 }
-            }, 1);
+            }, 2500);
         }else{
         place = getRandomPlace(mapItems);
         markHeading.textContent = "Mark " + place;
