@@ -1,5 +1,13 @@
+:root {
+  --color: #000000;
+  --white: #ffffff;
+}
+
 #imageMap {
   position: relative;
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  min-width: 707px;
 }
 
 .dot {
@@ -13,13 +21,14 @@
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: blue;
+  background-color: var(--color);
   border-radius: 50%;
 }
 
 
 
 body {
+  background-color: rgb(238, 233, 210);
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -32,10 +41,11 @@ body {
 }
 
 #markHeading {
+  background-color: white;
   text-align: center;
   margin-bottom: 20px;
   padding: 10px;
-  border: 2px solid #007bff;
+  border: 2px solid var(--color);
   border-radius: 5px;
 }
 
@@ -43,11 +53,11 @@ body {
   max-width: 100%;
   margin-bottom: 10px; /* Add margin-bottom for spacing */
 }
-
 #submitBtn {
-  padding: 10px 20px;
+  padding: 10px 325px;
+  margin-bottom: 25px; 
   font-size: 16px;
-  background-color: #007bff;
+  background-color: var(--color);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -55,5 +65,11 @@ body {
 }
 
 #submitBtn:hover {
-  background-color: #0056b3;
+  background-color: var(--color);
+}
+
+#submitBtn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
 }
