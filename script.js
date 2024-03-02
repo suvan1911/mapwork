@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     submitBtn.addEventListener("click", function() {
+        if (submitBtn.innerHTML==="RESTART"){
+            location.reload(); 
+        }
         let imageMapRect = imageMap.getBoundingClientRect();
         let imageMapLeft = imageMapRect.left + window.scrollX;
         let imageMapTop = imageMapRect.top + window.scrollY;
@@ -53,12 +56,17 @@ document.addEventListener("DOMContentLoaded", function() {
             delete mapItems[askedPlace];
             submitBtn.disabled = true;
             setTimeout(function(){
-                ansDot.remove();
-                dot.remove();
                 submitBtn.disabled = false;
-                place = getRandomPlace(mapItems);
-                markHeading.textContent = "Mark " + place;
-            }, 2500);
+                ansDot.remove();
+                if (dot){dot.remove();}
+                if (Object.keys(mapItems).length === 0){
+                    submitBtn.innerHTML = "RESTART"
+                    markHeading.textContent = "Score: " + score +". Press restart to play again!";
+                }else{
+                    place = getRandomPlace(mapItems);
+                    markHeading.textContent = "Mark " + place;
+                }
+            }, 1);
         }else{
         place = getRandomPlace(mapItems);
         markHeading.textContent = "Mark " + place;
