@@ -10,11 +10,12 @@ function distance(x1,y1,x2,y2){
 
 document.addEventListener("DOMContentLoaded", function() {
     let score =0;
-    // let scores = [];
-    let mapItems={Salal:[214,117],"Bhakra Nangal":[246,158],Tehri:[292,206],"Rana Pratap Sagar":[223,338],"Sardar Sarovar":[164,438],Hirakud:[417,444],"Nagarjuna Sagar":[302,576],Tungabhadra:[235,588],Namrup:[701,263],Singrauli:[382,364],Ramagundam:[313,506],Narora:[296,256],Kakrapara:[161,441],Tarapur:[156,485],Kalpakkam:[328,667],Noida:[272,241],Gandhinagar:[134,380],Mumbai:[160,501],Pune:[175,510],Hyderabad:[291,550],Bengaluru:[261,671],Chennai:[333,663],Thiruvananthapuram:[248,779],Kandla:[80,389],Marmagao:[180,603],"New Mangalore":[206,668],Kochi:[238,750],Tuticorin:[274,776],Vishakhapatnam:[413,534],Paradip:[490,463],Haldia:[520,421],"Amritsar(Raja Sansi - Sri Gurum Dass jee)":[218,153],"Delhi(Indira Gandhi)":[259,242],"Mumbai(Chhatrapati Shivaji)":[159,495],"Chennai(Meenam Bakkam)":[329,666],"Kolkata(Netaji Subhash Chandra Bose)":[529,401],"Hyderabad(Rajiv Gandhi)":[295,549]};
+    let mapItems={"Salal":[214,117],"Bhakra Nangal":[246,158],"Tehri":[292,206],"Rana Pratap Sagar":[223,338],"Sardar Sarovar":[164,438],"Hirakud":[417,444],"Nagarjuna Sagar":[302,576],"Tungabhadra":[235,588],"Namrup":[701,263],"Singrauli":[382,364],"Ramagundam":[313,506],"Narora":[296,256],"Kakrapara":[161,441],"Tarapur":[156,485],"Kalpakkam":[328,667],"Noida":[272,241],"Gandhinagar":[134,380],"Mumbai":[160,501],"Pune":[175,510],"Hyderabad":[291,550],"Bengaluru":[261,671],"Chennai":[333,663],"Thiruvananthapuram":[248,779],"Kandla":[80,389],"Marmagao":[180,603],"New Mangalore":[206,668],"Kochi":[238,750],"Tuticorin":[274,776],"Vishakhapatnam":[413,534],"Paradip":[490,463],"Haldia":[520,421],"Amritsar(Raja Sansi - Sri Gurum Dass jee)":[218,153],"Delhi(Indira Gandhi)":[259,242],"Mumbai(Chhatrapati Shivaji)":[159,495],"Chennai(Meenam Bakkam)":[329,666],"Kolkata(Netaji Subhash Chandra Bose)":[529,401],"Hyderabad(Rajiv Gandhi)":[295,549]};
     for (let [place,cord] of Object.entries(mapItems)){
         mapItems[place]=[cord[0]-40,cord[1]-5]
     }
+    let newItems = {"Indore":[189,402],"Surat":[118, 447],"Kanpur":[ 306, 287],"Coimbatore":[214, 714],"Durgapur":[ 478, 376],"Bokaro":[ 437, 369],"Jamshedpur":[442, 400],"Bhilai":[324, 442],"Vijayanagar":[202, 596],"Salem":[ 245, 686]}
+    mapItems = {...mapItems, ...newItems};
     let dot = null;
     
     imageMap.addEventListener("click", function(event) {
