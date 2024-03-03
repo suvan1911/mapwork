@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (dot){dot.remove();}
                 if (Object.keys(mapItems).length === 0){
                     submitBtn.innerHTML = "RESTART"
-                    markHeading.textContent = "Score: " + score +". Press restart to play again!";
+                    markHeading.textContent = "Score: " + score +"/47. Press restart to play again!";
                 }else{
                     place = getRandomPlace(mapItems);
                     markHeading.textContent = "Mark " + place;
