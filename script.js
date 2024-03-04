@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let newItems = {"Indore":[189,402],"Surat":[118, 447],"Kanpur":[ 306, 287],"Coimbatore":[214, 714],"Durgapur":[ 478, 376],"Bokaro":[ 437, 369],"Jamshedpur":[442, 400],"Bhilai":[324, 442],"Vijayanagar":[202, 596],"Salem":[ 245, 686]}
     mapItems = {...mapItems, ...newItems};
     let dot = null;
-    let factor = screen.width/1920;
+    let factor = screen.height/1080;
     imageMap.width = 707*factor
     imageMap.height = 796*factor
     for (let [place,cord] of Object.entries(mapItems)){
