@@ -17,7 +17,12 @@ document.addEventListener("DOMContentLoaded", function() {
     let newItems = {"Indore":[189,402],"Surat":[118, 447],"Kanpur":[ 306, 287],"Coimbatore":[214, 714],"Durgapur":[ 478, 376],"Bokaro":[ 437, 369],"Jamshedpur":[442, 400],"Bhilai":[324, 442],"Vijayanagar":[202, 596],"Salem":[ 245, 686]}
     mapItems = {...mapItems, ...newItems};
     let dot = null;
-    
+    let factor = screen.height/1080;
+    imageMap.width = 707*factor
+    imageMap.height = 796*factor
+    for (let [place,cord] of Object.entries(mapItems)){
+        mapItems[place]=[cord[0]*factor,cord[1]*factor]
+    }
     imageMap.addEventListener("click", function(event) {
         let imageMapRect = imageMap.getBoundingClientRect();
         let imageMapLeft = imageMapRect.left + window.scrollX;
@@ -77,9 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
             let userX = parseFloat(dot.style.left.slice(0,-2)) - imageMapLeft;
             let userY = parseFloat(dot.style.top.slice(0,-2)) - imageMapTop;
             if (distance(userX,userY,ansX,ansY)<50){score+=1;}
-            // scores.push(distance(userX,userY,ansX,ansY));
-            // let avg = scores.reduce((a, b) => a + b, 0)/scores.length
-            // console.log((1-avg/700)*100)
         }
     });
 });

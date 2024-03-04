@@ -7,7 +7,6 @@
   position: relative;
   border: 2px solid var(--color);
   border-radius: 5px;
-  min-width: 707px;
 }
 
 .dot {
