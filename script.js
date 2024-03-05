@@ -17,7 +17,7 @@ function defineLocations(){ // ?locations=location1,location2
     mapItems = {...mapItems, ...newItems};
 
     if (window.location.search.startsWith("?locations=")){ 
-        const arg = window.location.search.split("?locations=")[1] //location1,location2
+        const arg = window.location.search.replace("%20"," ").split("?locations=")[1] //[location1,location2], space in urlbecomes %20  
         locations = arg.split(',') //array of asked loactions
         for (let [place,cord] of Object.entries(mapItems)){
             if (!locations.includes(place)){delete mapItems[place]}
