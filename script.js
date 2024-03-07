@@ -28,6 +28,7 @@ function defineLocations(){ // ?locations=location1,location2
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    let nitemsDone = 0
     let mapItems = defineLocations();
     let totalLocations = Object.keys(mapItems).length;
     let score =0;
@@ -67,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let ansY=null;
         if (submitBtn.innerHTML == "START"){submitBtn.innerHTML = "SUBMIT"}
         if (markHeading.textContent.startsWith("Mark")){
+            nitemsDone ++;
             let askedPlace = markHeading.textContent.slice(5)
             ansX = mapItems[askedPlace][0]
             ansY = mapItems[askedPlace][1]
@@ -98,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let userX = parseFloat(dot.style.left.slice(0,-2)) - imageMapLeft;
             let userY = parseFloat(dot.style.top.slice(0,-2)) - imageMapTop;
             if (distance(userX,userY,ansX,ansY)<50){score+=1;}
+            scorePanel.innerHTML = `Score: ${score}/${nitemsDone}`
         }
     });
 });

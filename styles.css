@@ -72,6 +72,12 @@ body {
   color: #666;
   cursor: not-allowed;
 }
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
 
 .bottomright {
   position: absolute;
