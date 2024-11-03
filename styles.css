@@ -53,7 +53,7 @@ body {
   margin-bottom: 10px; /* Add margin-bottom for spacing */
 }
 #submitBtn {
-  padding: 10px 325px;
+  padding: 10px 240px;
   margin-bottom: 25px; 
   font-size: 16px;
   background-color: var(--color);
@@ -81,7 +81,7 @@ body {
 
 .bottomright {
   position: absolute;
-  bottom: 8px;
+  bottom: 28px;
   right: 16px;
   font-size: 18px;
 }
@@ -91,10 +91,10 @@ body {
   left: 16px;
   font-size: 17px;
 }
-.discord{
+.github{
   position: absolute;
   bottom: 4px;
-  right: 50px;
+  right: 18px;
   font-size: 18px;
 }
 .fa {
@@ -102,7 +102,13 @@ body {
   text-align: center;
 }
 
-/* Add a hover effect if you want */
 .fa:hover {
   opacity: 0.7;
+}
+
+.bugsfeedback {
+  position: absolute;
+  bottom: 8px;
+  right: 42px;
+  font-size: 18px;
 }
